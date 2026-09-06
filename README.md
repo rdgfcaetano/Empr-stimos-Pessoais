@@ -43,6 +43,40 @@ Abra `http://localhost:5173`.
 docker compose up --build
 ```
 
+## Deploy de teste
+
+### Backend no Render
+
+1. Suba este projeto para o GitHub.
+2. No Render, crie um Blueprint apontando para o repositorio.
+3. O arquivo `render.yaml` cria a API FastAPI e um banco PostgreSQL.
+4. Depois que o frontend tiver dominio, configure `CORS_ORIGINS` no Render:
+
+```text
+https://seu-frontend.vercel.app
+```
+
+### Frontend na Vercel
+
+1. Importe o mesmo repositorio na Vercel.
+2. Configure o diretorio raiz como `frontend`.
+3. Configure a variavel de ambiente:
+
+```text
+VITE_API_URL=https://sua-api.onrender.com/api
+```
+
+4. Faca o deploy.
+
+### Dominio
+
+Use um subdominio para cada parte:
+
+```text
+app.seudominio.com -> frontend
+api.seudominio.com -> backend
+```
+
 ## Funcionalidades
 
 - Login JWT
