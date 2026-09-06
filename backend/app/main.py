@@ -15,7 +15,12 @@ app = FastAPI(title="Sistema de Gestão de Empréstimos", version="1.0.0")
 
 app.add_middleware(
     CORSMiddleware,
-    allow_origins=settings.cors_origin_list,
+    allow_origins=[
+        "https://empr-stimos-pessoais.vercel.app",
+        "http://localhost:3000",
+        "http://localhost:5173",
+        "*"  # Garante acesso total durante os testes
+    ],
     allow_credentials=True,
     allow_methods=["*"],
     allow_headers=["*"],
