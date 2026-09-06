@@ -13,6 +13,13 @@ from app.models.user import User
 settings = get_settings()
 app = FastAPI(title="Sistema de Gestão de Empréstimos", version="1.0.0")
 
+origins = [
+    "https://empr-stimos-pessoais.vercel.app",
+    "https://xn--empr-stimos-pessoais-24b.vercel.app",
+    "http://localhost:3000",
+    "http://localhost:5173",
+]    
+
 app.add_middleware(
     CORSMiddleware,
     allow_origins=[
