@@ -1,6 +1,6 @@
 from datetime import datetime
 
-from pydantic import BaseModel
+from pydantic import BaseModel, str, Field
 
 from app.models.enums import UserRole
 from app.schemas.common import ORMModel
