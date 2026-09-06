@@ -50,7 +50,8 @@ docker compose up --build
 1. Suba este projeto para o GitHub.
 2. No Render, crie um Blueprint apontando para o repositorio.
 3. O arquivo `render.yaml` cria a API FastAPI e um banco PostgreSQL.
-4. Depois que o frontend tiver dominio, configure `CORS_ORIGINS` no Render:
+4. Confirme que a variavel `PYTHON_VERSION` esta como `3.12.8`.
+5. Depois que o frontend tiver dominio, configure `CORS_ORIGINS` no Render:
 
 ```text
 https://seu-frontend.vercel.app
