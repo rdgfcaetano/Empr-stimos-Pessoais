@@ -8,14 +8,14 @@ from app.schemas.common import ORMModel
 
 class UserCreate(BaseModel):
     name: str = Field(min_length=2, max_length=120)
-    email: EmailStr
+    email: str
     password: str = Field(min_length=8, max_length=128)
     role: UserRole = UserRole.PARTNER
 
 
 class UserUpdate(BaseModel):
     name: str | None = Field(default=None, min_length=2, max_length=120)
-    email: EmailStr | None = None
+    email: str | None = None
     password: str | None = Field(default=None, min_length=8, max_length=128)
     role: UserRole | None = None
     is_active: bool | None = None
@@ -24,7 +24,7 @@ class UserUpdate(BaseModel):
 class UserOut(ORMModel):
     id: int
     name: str
-    email: EmailStr
+    email: str
     role: UserRole
     is_active: bool
     created_at: datetime
