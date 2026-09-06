@@ -1,6 +1,6 @@
 from datetime import datetime
 
-from pydantic import BaseModel, EmailStr, Field
+from pydantic import BaseModel
 
 from app.models.enums import UserRole
 from app.schemas.common import ORMModel
@@ -31,7 +31,7 @@ class UserOut(ORMModel):
 
 
 class LoginIn(BaseModel):
-    email: EmailStr
+    email: str
     password: str
 
 
